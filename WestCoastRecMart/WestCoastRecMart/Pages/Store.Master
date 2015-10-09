@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Store.master.cs" Inherits="WestCoastRecMart.Pages.Store" %>
+<%@ Register TagPrefix="SS" TagName="CatLinks" Src="~/Controls/CategoryList.ascx" %>
+<%@ Register TagPrefix="SS" TagName="CartSummary" Src="~/Controls/CartSummary.ascx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>WestCoast Recreation Mart</title>
+    <link rel="stylesheet" href ="/Content/Styles.css" />
+    <%: System.Web.Optimization.Scripts.Render("~/bundles/validation") %>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="header">
+        <SS:CartSummary runat="server" />
+        <div class ="title">WestCoast Sports Store</div>
+    </div>
+        <div id ="categories">
+            <SS:CatLinks runat="server" />
+        </div>
+        <div>
+        <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
